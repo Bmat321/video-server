@@ -48,7 +48,7 @@ export const googleAuth = async (req, res, next) => {
         .status(200)
         .json(user._doc);
     } else {
-      const {password, ...others}= req.body
+      const {password, ...others}= user._doc;
       const newUser = new User({
         others,
         fromGoogle: true,
