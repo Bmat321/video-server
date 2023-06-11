@@ -20,8 +20,8 @@ const connect = () =>
     .catch((err) => console.log(err));
 
 app.use(express.json());
-app.use(cors());
 app.use(cookieParser());
+app.use(cors())
 app.use("/api/auths", authsRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/videos", videosRoutes);
