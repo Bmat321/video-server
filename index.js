@@ -7,6 +7,7 @@ import usersRoutes from "./routes/users.js";
 import videosRoutes from "./routes/videos.js";
 import commentsRoutes from "./routes/comments.js";
 import cookieParser from "cookie-parser";
+import cors from "cors"
 
 const app = express();
 
@@ -19,6 +20,7 @@ const connect = () =>
     .catch((err) => console.log(err));
 
 app.use(express.json());
+app.use(cors());
 app.use(cookieParser());
 app.use("/api/auths", authsRoutes);
 app.use("/api/users", usersRoutes);
